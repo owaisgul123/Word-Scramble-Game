@@ -2,27 +2,30 @@ import java.util.ArrayList;
 import java.util.Locale;
 import java.util.Random;
 import java.util.Scanner;
-public class GameInitializer implements WordScrambler, Identifier{
-    String words = "hello i am happy why where lahore karachi multan fly apple banana joker xylophone phobia bottle computer umbrella xeven system";
+public class GameInitializer implements WordScrambler, Identifier {
+    String words = "hello i am happy why where lahore karachi multan fly apple banana will people yard rio cocomo joker xylophone phobia bottle computer umbrella xeven system";
     String[] wordsList = words.split("\\s+");
     ArrayList<String> wordsListAL = new ArrayList<>();
     static int score = 0;
+
+
+    // Methods
     @Override
     public void displayWord() {
         for (int j = 0; j < 3; j++) {
             generateRandom();
         }
         System.out.println("Avalible alphabets ");
-        for(char letter: alphabets) {
+        for (char letter : alphabets) {
             System.out.print(letter);
         }
-        printWords();
+        addWordsArrayList();
     }
 
     @Override
     public void takeInputWord() {
         Scanner input = new Scanner(System.in);
-        System.out.println("\n Enter Word!\n");
+        System.out.print("\nEnter Word!    :      ");
         String word = input.nextLine();
         word = word.toLowerCase(Locale.ROOT);
         wordIdentifier(word);
@@ -33,8 +36,7 @@ public class GameInitializer implements WordScrambler, Identifier{
         if (wordsListAL.contains(word)) {
             score += 10;
             System.out.println("Successfull! Score + 10 ");
-        }
-        else {
+        } else {
             System.out.println("NOPE!");
         }
     }
@@ -42,12 +44,14 @@ public class GameInitializer implements WordScrambler, Identifier{
     // !!!!
     // temp
     // !!!
-    public void printWords() {
-        for(String word: wordsList) {
+    // Adding into the array list. For ease of contain methods.
+    public void addWordsArrayList() {
+        for (String word : wordsList) {
             wordsListAL.add(word);
             //System.out.println(word);
         }
     }
+
     static void generateRandom() {
         int num = alphabets.length;
         Random Rand = new Random();
@@ -63,5 +67,18 @@ public class GameInitializer implements WordScrambler, Identifier{
         System.out.println(score);
     }
 
-
+    // temp
+    //
+//    public void printCharacter(@org.jetbrains.annotations.NotNull String word) {
+//        int num = word.length();
+//        int scoreWord = 0;
+//        // Loop to iterate over the String
+//        for (int i = 0; i < num; i++) {
+//            // gets the individual character from string
+//            char dictionaryCharacter = word.charAt(i);
+//            //scoreWord += alphabetsDictionery.get(dictionaryCharacter);
+//            System.out.println(dictionaryCharacter);
+//        }
+//
+//    }
 }

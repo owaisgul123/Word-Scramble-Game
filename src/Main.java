@@ -1,25 +1,32 @@
-// Press Shift twice to open the Search Everywhere dialog and type `show whitespaces`,
-// then press Enter. You can now see whitespace characters in your code.
 import java.util.Random;
 import java.util.Scanner;
+import java.util.HashMap;
 public class Main {
     public static void main(String[] args) {
+
         Scanner input = new Scanner(System.in);
-        float score;
+        //float score;
         int i = 1;
         while (i > 0) {
-            GameInitializer scrambler = new GameInitializer();
+            Scoring scrambler = new Scoring();
             scrambler.displayWord();
+            scrambler.assignScoreAlphabets();
+            //scrambler.displayAssignScore();
             scrambler.takeInputWord();
+            //String word = input.nextLine();
+            //System.out.println(" \n" + scrambler.calcultateScore(word));
+            //scrambler.calcultateScore(word);
+            //scrambler.printCharacter("hello");
             // scrambler.wordIdentifier();
             System.out.println("Do you want to continue ? ");
             int flag = input.nextInt();
             if (flag == 1) {
-                GameInitializer.printScore();
+                Scoring.printScore();
                 break;
             }
             //   scrambler.printWords();
 
         }
+
     }
 }
