@@ -7,8 +7,9 @@ public class Main {
         Scanner input = new Scanner(System.in);
         //float score;
         int i = 1;
+        Scoring scrambler = new Scoring();
         while (i > 0) {
-            Scoring scrambler = new Scoring();
+
             scrambler.displayWord();
             scrambler.assignScoreAlphabets();
             //scrambler.displayAssignScore();

@@ -16,6 +16,8 @@ public class GameInitializer implements WordScrambler, Identifier {
             generateRandom();
         }
         System.out.println("Avalible alphabets ");
+
+        // Make a string using String Builder class, then set the word label to the string.
         for (char letter : alphabets) {
             System.out.print(letter);
         }

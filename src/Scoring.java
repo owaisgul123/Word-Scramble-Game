@@ -59,7 +59,7 @@ public class Scoring extends GameInitializer implements WordScrambler {
             if (alphabetsDictionery.containsKey(dictionaryCharacter)) {
 
                 scoreWord += alphabetsDictionery.get(dictionaryCharacter);
-                System.out.println(dictionaryCharacter);
+                //System.out.println(dictionaryCharacter);
             }
 
         }
